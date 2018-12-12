@@ -95,14 +95,15 @@ def split_feature_label(data_path, sample_file_name, data_export, test_size):
     star_2_list = label2text_dict[2]
     star_3_list = label2text_dict[3]
     star_1_list = label2text_dict[1]
-    # print(len(star_4_list), len(star_3_list), len(star_2_list), len(star_1_list))
+    print(len(label2text_dict[5]), len(star_4_list), len(star_3_list), len(star_2_list), len(star_1_list))
 
 
     new_star_4_list = upsample(star_4_list, 2) # 40234
     new_star_2_list = upsample(star_2_list, 2) # 7816
     new_star_3_list = upsample(star_3_list, 2) # 14052
     new_star_1_list = upsample(star_1_list, 6) # 15236
-    print(len(new_star_4_list), len(new_star_3_list), len(new_star_2_list), len(new_star_1_list))
+    print('after upsample:')
+    print(len(label2text_dict[5]), len(new_star_4_list), len(new_star_3_list), len(new_star_2_list), len(new_star_1_list))
     star2text_pair_5 = [(5,x) for x in label2text_dict[5]] # 101860
     star2text_pair_4 = [(4,x) for x in new_star_4_list]
     star2text_pair_3 = [(3,x) for x in new_star_3_list]

@@ -24,6 +24,16 @@ with open('./test_acc.pkl', 'rb') as f:
 with open('./test_sen_acc.pkl', 'rb') as f:
     test_sen_acc = pickle.load(f)
 
+plt.figure()
+plt.plot(train_sen_acc)
+plt.plot(test_sen_acc)
+plt.legend(['training set', 'testing set'])
+plt.ylabel('sentence level acc')
+plt.xlabel('num of epochs')
+plt.title('accuracy VS epochs')
+plt.savefig('./plots/train_sen_acc.png')
+
+
 '''
 test_loss_new = []
 for i in range(len(test_acc_num) - 1):
@@ -44,7 +54,7 @@ for i in range(len(test_acc_num) - 1):
     for j in range(5):
         test_sen_acc_new.append(test_sen_acc_num[i] + step * j)
 '''
-
+'''
 plt.figure()
 plt.plot([0, 4, 8, 12],test_acc[::4])
 plt.plot([0, 4, 8, 12],test_acc_num)
@@ -74,3 +84,4 @@ plt.xlabel('num of epochs')
 plt.title('different kernel size VS sentence level acc')
 plt.savefig('./plots/sen_acc_kernel(100Vs200).png')
 plt.close()
+'''
